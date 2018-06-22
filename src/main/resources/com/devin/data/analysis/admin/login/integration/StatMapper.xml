@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devin.data.analysis.admin.login.integration.StatMapper">
+  <select id="statUser" resultType="map">
+    select
+    substr(registration_time,1,10) as day,
+    count(distinct id_da_admin) as users
+    from da_admin
+    group by substr(registration_time,1,10)
+  </select>
+</mapper>
