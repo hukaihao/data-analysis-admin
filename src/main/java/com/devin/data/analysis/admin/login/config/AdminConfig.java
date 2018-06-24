@@ -1,8 +1,12 @@
 package com.devin.data.analysis.admin.login.config;
 
+import com.devin.data.analysis.admin.login.annotation.support.LoginAdminHandlerMethodArgumentResolver;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
 
 @Configuration
 public class AdminConfig implements WebMvcConfigurer {
@@ -18,5 +22,10 @@ public class AdminConfig implements WebMvcConfigurer {
                 .allowedMethods("*")
                 //跨域允许时间
                 .maxAge(3600);
+    }
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+        argumentResolvers.add(new LoginAdminHandlerMethodArgumentResolver());
     }
 }
