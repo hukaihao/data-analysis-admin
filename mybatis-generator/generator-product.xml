@@ -64,11 +64,12 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.devin.data.analysis.admin.product.integration" targetProject="src/main/java" />
         <!--表名-->
         <table tableName="da_product"  enableDeleteByPrimaryKey="true">
-            <generatedKey column="id_da_product" sqlStatement="MySql" identity="true" />
+            <!--<generatedKey column="id_da_product" sqlStatement="MySql" identity="true" />-->
         </table>
         <table tableName="da_every_color_data"  enableDeleteByPrimaryKey="true">
-            <generatedKey column="id_every_color_data" sqlStatement="MySql" identity="true" />
+           <!-- <generatedKey column="id_every_color_data" sqlStatement="MySql" identity="true" />-->
             <columnOverride javaType="java.time.LocalDateTime" column="lottery_date"/>
+            <columnOverride javaType="java.time.LocalDateTime" column="created_date"/>
         </table>
 
     </context>

@@ -21,7 +21,7 @@ public class AdminConfig implements WebMvcConfigurer {
                 //设置允许的方法
                 .allowedMethods("*")
                 //跨域允许时间
-                .maxAge(3600);
+                .maxAge(6600);
     }
 
     @Override

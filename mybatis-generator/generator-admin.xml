@@ -64,7 +64,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.devin.data.analysis.admin.login.integration" targetProject="src/main/java" />
         <!--表名-->
         <table tableName="da_admin"  enableDeleteByPrimaryKey="true">
-            <generatedKey column="id_da_admin" sqlStatement="MySql" identity="true" />
+            <!--<generatedKey column="id_da_admin" sqlStatement="MySql" identity="true" />-->
             <columnOverride javaType="java.time.LocalDateTime" column="last_login_time"/>
             <columnOverride javaType="java.time.LocalDateTime" column="update_time"/>
             <columnOverride javaType="java.time.LocalDateTime" column="registration_time"/>

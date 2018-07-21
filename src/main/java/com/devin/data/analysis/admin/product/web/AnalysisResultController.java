@@ -41,8 +41,8 @@ public class AnalysisResultController {
     }
 
     @PostMapping("/create")
-    public Object create(@LoginAdmin Integer adminId, @RequestBody DaEveryColorData daEveryColorData) {
-        if (adminId == null) {
+    public Object create(@LoginAdmin String idDaAdmin, @RequestBody DaEveryColorData daEveryColorData) {
+        if (idDaAdmin == null) {
             return ResponseUtil.unlogin();
         }
         productAnalysisResultService.add(daEveryColorData);
@@ -50,8 +50,8 @@ public class AnalysisResultController {
     }
 
     @GetMapping("/read")
-    public Object read(@LoginAdmin Integer adminId, String idEveryColorData) {
-        if (adminId == null) {
+    public Object read(@LoginAdmin String idDaAdmin, String idEveryColorData) {
+        if (idDaAdmin == null) {
             return ResponseUtil.unlogin();
         }
 
@@ -64,8 +64,8 @@ public class AnalysisResultController {
     }
 
     @PostMapping("/update")
-    public Object update(@LoginAdmin Integer adminId, @RequestBody DaEveryColorData daEveryColorData) {
-        if (adminId == null) {
+    public Object update(@LoginAdmin String idDaAdmin, @RequestBody DaEveryColorData daEveryColorData) {
+        if (idDaAdmin == null) {
             return ResponseUtil.unlogin();
         }
         productAnalysisResultService.updateById(daEveryColorData);
@@ -73,8 +73,8 @@ public class AnalysisResultController {
     }
 
     @PostMapping("/delete")
-    public Object delete(@LoginAdmin Integer adminId, @RequestBody DaEveryColorData daEveryColorData) {
-        if (adminId == null) {
+    public Object delete(@LoginAdmin String idDaAdmin, @RequestBody DaEveryColorData daEveryColorData) {
+        if (idDaAdmin == null) {
             return ResponseUtil.unlogin();
         }
         productAnalysisResultService.deleteById(daEveryColorData.getIdEveryColorData());
